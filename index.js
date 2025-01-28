@@ -11,7 +11,7 @@ import commentRoutes from "./routes/comment.route.js"
 dotenv.config()
 
 mongoose
-  .connect(process.env.MONGO_URI)
+  .connect("mongodb+srv://satyampandit021:20172522@rvbmhotelbooking.9hfzkrx.mongodb.net/news?retryWrites=true&w=majority")
   .then(() => {
     console.log("Database is connected")
   })
@@ -29,7 +29,7 @@ app.listen(5000, () => {
   console.log("Server is running on port 5000!")
 })
 app.get("/", (req, res) => {
-  res.send("Hello World!")
+  res.send("Hello news World!")
 })
 app.use("/api/auth", authRoutes)
 app.use("/api/user", userRoutes)
