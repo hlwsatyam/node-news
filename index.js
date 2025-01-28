@@ -9,7 +9,7 @@ import postRoutes from "./routes/post.route.js"
 import commentRoutes from "./routes/comment.route.js"
 
 dotenv.config()
-app.use(cors());
+
 
 mongoose
   .connect("mongodb+srv://satyampandit021:20172522@rvbmhotelbooking.9hfzkrx.mongodb.net/news?retryWrites=true&w=majority")
@@ -23,6 +23,7 @@ mongoose
 const app = express()
 
 // for allowing json object in req body
+app.use(cors());
 app.use(express.json())
 app.use(cookieParser())
 
